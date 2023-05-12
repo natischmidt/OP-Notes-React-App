@@ -2,6 +2,7 @@ import {React, useState} from "react";
 import { View} from "react-native";
 import Note from "./Note"
 import {StyleSheet} from "react-native";
+import CreateNote from "./CreateNote";
 
 
 export default function Notes() {
@@ -13,7 +14,7 @@ export default function Notes() {
         <View style={styles.notes}>
             <Note/>
             <Note/>
-            <Note/>
+            <CreateNote/>
         </View>
     );
 }

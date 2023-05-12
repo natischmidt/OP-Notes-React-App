@@ -1,15 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Notes from "./Notes";
 
 export default function App() {
   return (
-    <View style={styles.main}>
-    </View>
+      <Notes/>
   );
 }
 
-const styles = StyleSheet.create({
-  main: {
-//design wip
-  },
-});
