@@ -7,9 +7,11 @@ export default function Note() {
 
         <View style={styles.note}>
             <View style={styles.noteBody}></View>
-            <View style={[styles.noteFooter, { justifyContent: "flex-end" }]}>
+            <View style={[styles.noteFooter,
+                { justifyContent: "flex-end" }]}>
+
                 <TouchableOpacity style={styles.Button}>
-                    <Button title="DELETE NOTE" onPress={handleDeleteNote} />
+                    <Button title="DELETE" onPress={handleDeleteNote} />
                 </TouchableOpacity>
             </View>
         </View>
@@ -20,20 +22,34 @@ export default function Note() {
 
 const styles = {
     note: {
-
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        borderRadius: 15,
+        borderWidth: 1.5,
+        borderColor: 'rgba(255, 255, 255, 0.326)',
+        color: '#fff',
+        padding: 15,
+        minHeight: 140,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        overflowWrap: 'break-word',
+        shadowOffset: { width: -6, height: -4 },
+        shadowColor: 'rgba(255, 255, 255, 0.03)',
+        shadowOpacity: 1,
+        shadowRadius: 2,
     },
     noteBody: {
 
     },
     noteFooter: {
+        display: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 15,
+    },
+
+    Button: {
 
     },
 
-    noteSaveButton: {
-
-    },
-    noteSaveButtonText: {
-
-    },
 };
 

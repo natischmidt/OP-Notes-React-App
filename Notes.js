@@ -10,16 +10,12 @@ export default function Notes() {
     const [notes, setNotes] = useState([]);
     const [text, setText] = useState("");
 
+
     return (
-        <View style={styles.notes}>
+        <View>
             <Note/>
             <Note/>
             <CreateNote/>
         </View>
     );
 }
-const styles = StyleSheet.create({
-    notes: {
-//wip
-    },
-});

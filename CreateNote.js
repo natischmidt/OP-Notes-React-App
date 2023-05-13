@@ -13,10 +13,9 @@ export default function CreateNote() {
                 maxLength={100}
                 multiline={true}
             />
-
             <View style={styles.noteFooter}>
-                <TouchableOpacity style={styles.noteSaveButton}>
-                    <Button title="SAVE NOTE" onPress={handleSaveNote} />
+                <TouchableOpacity style={styles.Button}>
+                    <Button title="SAVE" onPress={handleSaveNote} />
                 </TouchableOpacity>
             </View>
         </View>
@@ -25,20 +24,7 @@ export default function CreateNote() {
 
 const styles = {
     note: {
-
-    },
-    noteInput: {
-
-    },
-    noteFooter: {
-
     },
 
-    noteSaveButton: {
-
-    },
-    noteSaveButtonText: {
-
-    },
 };
 
