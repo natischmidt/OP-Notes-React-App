@@ -22,18 +22,14 @@ export default function Note() {
 
 const styles = {
     note: {
-        backgroundColor: 'rgba(255, 255, 255, 0.1)',
         borderRadius: 15,
         borderWidth: 1.5,
-        borderColor: 'rgba(255, 255, 255, 0.326)',
-        color: '#fff',
         padding: 15,
         minHeight: 140,
         flexDirection: 'column',
         justifyContent: 'space-between',
         overflowWrap: 'break-word',
         shadowOffset: { width: -6, height: -4 },
-        shadowColor: 'rgba(255, 255, 255, 0.03)',
         shadowOpacity: 1,
         shadowRadius: 2,
     },
@@ -41,10 +37,7 @@ const styles = {
 
     },
     noteFooter: {
-        display: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginBottom: 15,
+
     },
 
     Button: {
