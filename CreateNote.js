@@ -6,7 +6,15 @@ export default function CreateNote() {
     return (
 
         <View style={styles.note}>
+            <View style={styles.noteHeader}>
+                <TextInput
+                    keyboardType='numeric'
+                    style={styles.date}
+                    placeholder="Enter date"
+                    maxLength={10}
 
+                />
+            </View>
             <TextInput
                 style={styles.noteInput}
                 placeholder="Type your note"
@@ -24,6 +32,16 @@ export default function CreateNote() {
 
 const styles = {
     note: {
+        borderRadius: 15,
+        borderWidth: 1.5,
+        padding: 15,
+        minHeight: 140,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        overflowWrap: 'break-word',
+        shadowOffset: { width: -6, height: -4 },
+        shadowOpacity: 1,
+        shadowRadius: 2,
     },
 
 };

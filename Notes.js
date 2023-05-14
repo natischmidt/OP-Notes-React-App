@@ -1,7 +1,7 @@
 import {React, useState} from "react";
 import { View} from "react-native";
 import Note from "./Note"
-import {StyleSheet} from "react-native";
+import Header from "./Header"
 import CreateNote from "./CreateNote";
 
 
@@ -13,9 +13,10 @@ export default function Notes() {
 
     return (
         <View>
-            <Note/>
-            <Note/>
+            <Header/>
             <CreateNote/>
+            <Note/>
+            <Note/>
         </View>
     );
 }

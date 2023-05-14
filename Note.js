@@ -9,7 +9,6 @@ export default function Note() {
             <View style={styles.noteBody}></View>
             <View style={[styles.noteFooter,
                 { justifyContent: "flex-end" }]}>
-
                 <TouchableOpacity style={styles.Button}>
                     <Button title="DELETE" onPress={handleDeleteNote} />
                 </TouchableOpacity>
