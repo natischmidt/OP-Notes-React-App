@@ -1,7 +1,7 @@
 import {React, useState} from "react";
 import {View} from "react-native";
 import Note from "./Note"
-import MyHeader from "./Header"
+import MyHeader from "./MyStack"
 import CreateNote from "./CreateNote";
 
 
@@ -14,7 +14,6 @@ export default function Notes() {
 
     return (
         <View>
-            <MyHeader/>
             <CreateNote/>
             <Note/>
             <Note/>
