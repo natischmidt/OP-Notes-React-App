@@ -1,6 +1,5 @@
-import React from 'react'
+import {createStackNavigator} from "@react-navigation/stack";
 import 'react-native-gesture-handler';
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {NavigationContainer} from "@react-navigation/native";
 import Home from "./Home";
 import CreateNote from "./CreateNote";
@@ -8,7 +7,7 @@ import Note from "./Note";
 
 
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 
 const MyStack = () => {
@@ -24,10 +23,3 @@ const MyStack = () => {
     );
 };
 
-
-
-// <View style={{flexDirection:'row', margin:15 }}>
-//     <Text style={{fontWeight:'bold', fontSize:30, color:'black'}}>
-//         OPNotes
-//     </Text>
-// </View>
