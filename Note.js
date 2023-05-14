@@ -16,7 +16,6 @@ export default function Note() {
         </View>
 
     );
-
 }
 
 const styles = {

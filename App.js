@@ -1,8 +1,8 @@
-import Notes from "./Notes";
+import Home from "./Home";
 
 export default function App() {
   return (
-      <Notes/>
+      <Home/>
   );
 }
 

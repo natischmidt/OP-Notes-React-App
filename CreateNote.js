@@ -12,7 +12,6 @@ export default function CreateNote() {
                     style={styles.date}
                     placeholder="Enter date"
                     maxLength={10}
-
                 />
             </View>
             <TextInput
