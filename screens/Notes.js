@@ -33,6 +33,14 @@ export default function Notes() {
 
     return (
         <View>
+            {notes.map((note) => (
+                <Note
+                    key={note.id}
+                    id={note.id}
+                    text={note.text}
+                    deleteHandler={deleteHandler}
+                />
+            ))}
             <CreateNote
                 textHandler={textHandler}
                 saveHandler={saveHandler}
