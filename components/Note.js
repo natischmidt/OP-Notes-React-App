@@ -6,10 +6,9 @@ export default function Note({ id, text, deleteHandler }) {
     return (
         <View style={styles.note}>
             <View style={styles.noteBody}> {text} </View>
-            <View style={[styles.noteFooter,
-                { justifyContent: "flex-end" }]}>
+            <View style={[styles.noteFooter, {justifyContent: "flex-end" }]}>
                 <TouchableOpacity style={styles.Button}>
-                    <Button title="DELETE" onPress={deleteHandler(id)} />
+                    <Button title="DELETE" onPress={() => deleteHandler(id)} />
                 </TouchableOpacity>
             </View>
         </View>
