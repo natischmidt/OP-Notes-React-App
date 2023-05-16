@@ -1,8 +1,9 @@
 import React from "react";
 import { View, TextInput, Button,TouchableOpacity } from "react-native";
 
-export default function CreateNote() {
-    let handleSaveNote;
+export default function CreateNote({ textHandler, saveHandler, text }) {
+
+
     return (
 
         <View style={styles.note}>
@@ -16,13 +17,16 @@ export default function CreateNote() {
             </View>
             <TextInput
                 style={styles.noteInput}
+                value={text}
                 placeholder="Type your note"
                 maxLength={100}
+                onChange={textHandler}
                 multiline={true}
             />
+
             <View style={styles.noteFooter}>
                 <TouchableOpacity style={styles.Button}>
-                    <Button title="SAVE" onPress={handleSaveNote} />
+                    <Button title="SAVE" onPress={saveHandler} />
                 </TouchableOpacity>
             </View>
         </View>
