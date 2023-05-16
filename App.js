@@ -12,7 +12,7 @@ export default function App() {
   return (
       <NavigationContainer>
           <Stacked.Navigator>
-              {/*<Stacked.Screen name='Home' component={Home}/>*/}
+              <Stacked.Screen name='Home' component={Home}/>
               <Stacked.Screen name='Notes' component={Notes}/>
           </Stacked.Navigator>
       </NavigationContainer>
