@@ -2,16 +2,21 @@ import React from "react";
 import {View, Text, Button, TouchableOpacity} from "react-native";
 
 export default function Note({ id, text,date, deleteHandler }) {
+
+    const handleDelete = () => {
+        deleteHandler(id);
+    };
+
     return (
         <View style={styles.note}>
             <View style={styles.noteBody}>
                 <Text>{text || ""}</Text>
                 <Text>Date: {date}</Text>
             </View>
-            <View style={[styles.noteFooter, { justifyContent: "flex-end" }]}>
-                <TouchableOpacity style={styles.Button}>
-                    <Button title="DELETE" onPress={() => deleteHandler(id)} />
-                </TouchableOpacity>
+                <View style={[styles.noteFooter, { justifyContent: 'flex-end' }]}>
+                    <TouchableOpacity style={styles.button} onPress={handleDelete}>
+                        <Text style={styles.buttonText}>DELETE</Text>
+                    </TouchableOpacity>
             </View>
         </View>
     );
@@ -32,12 +37,19 @@ const styles = {
     },
     noteBody: {},
     noteFooter: {},
-    Button: {
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 12,
         paddingHorizontal: 32,
         borderRadius: 4,
         elevation: 3,
+        backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: 'white',
+    },
+    buttonText: {
+        color: 'black',
+        fontSize: 16,
     },
 };
