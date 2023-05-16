@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, TouchableOpacity } from "react-native";
+import {View, Text, Button, TouchableOpacity} from "react-native";
 
 export default function Note({ id, text,date, deleteHandler }) {
     return (
@@ -32,5 +32,12 @@ const styles = {
     },
     noteBody: {},
     noteFooter: {},
-    Button: {},
+    Button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 4,
+        elevation: 3,
+    },
 };

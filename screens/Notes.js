@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { ImageBackground,View,StyleSheet } from "react-native";
 import Note from "../components/Note";
 import CreateNote from "../components/CreateNote";
 import { v4 as uuid } from "uuid";
@@ -37,6 +37,10 @@ export default function Notes() {
 
     return (
         <View>
+        <ImageBackground
+            source={require("../assets/background.jpg")}
+            resizeMode="cover"
+            style={styles.background}>
             {notes.map((note) => (
                 <Note
                     key={note.id}
@@ -53,6 +57,32 @@ export default function Notes() {
                 dateHandler={dateHandler}
                 date={date}
             />
+       </ImageBackground>
         </View>
     );
+}
+
+const styles =  {
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+
+    },
+    background: {
+        width: '100%',
+        height: '100%'
+    },
+    logo: {
+        width: 250,
+        height: 250,
+        marginLeft: '14%',
+        marginTop: '10%'
+    },
+    text: {
+        color: 'black',
+        marginLeft: '30%',
+        marginTop: '10%'
+
+    },
 }
