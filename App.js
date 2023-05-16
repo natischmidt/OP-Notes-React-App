@@ -15,8 +15,8 @@ export default function App() {
               <Stacked.Screen name='Home' component={Home}/>
               <Stacked.Screen name='Notes' component={Notes}/>
           </Stacked.Navigator>
-      <Home/>
       </NavigationContainer>
+
   );
 }
 

@@ -1,35 +1,51 @@
-import { View, Text, Image } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import React from 'react';
+import { ImageBackground,View, Text, Image } from "react-native";
 // import {View} from "react-native";
 // import Header from "./Header"
 // import {NavigationContainer} from "@react-navigation/native";
 
 export default function Home() {
 
-
     return (
+
         <View style={styles.container}>
-            <StatusBar style='auto'/>
+            <ImageBackground
+                source={require("../assets/background.jpg")}
+                resizeMode="contain"
+                style={styles.background}>
             <Image
                 style={styles.logo}
-                source={require("../assets/notesIcon.jpg")}
+                source={require("../assets/Notes-icon.png")}
             />
+            <Text style={styles.text}>Write everything down.</Text>
+            </ImageBackground>
         </View>
 
     );
 }
+
 const styles = {
     container: {
-     backgroundColor: `#4682b4`,
-    },
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
 
+    },
+    background: {
+        width: '100%',
+        height: '100%'
+    },
     logo: {
-        marginLeft:60,
-        marginRight:50,
-        marginTop: 50,
         width: 250,
         height: 250,
-        marginBottom: 50
+        marginLeft: '15%',
+        marginTop: '10%'
+    },
+    text: {
+        color: 'black',
+        marginLeft: '30%',
+        marginTop: '10%'
+
     }
 
 };
