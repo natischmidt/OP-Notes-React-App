@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TextInput, Button,TouchableOpacity } from "react-native";
+import { View, TextInput, Text,TouchableOpacity } from "react-native";
 
 export default function CreateNote({ textHandler, saveHandler, dateHandler, date, text }) {
 
@@ -44,9 +44,7 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'space-between',
         overflowWrap: 'break-word',
-        shadowOffset: { width: -6, height: -4 },
-        shadowOpacity: 1,
-        shadowRadius: 2,
+
     },
     button: {
         alignItems: 'center',

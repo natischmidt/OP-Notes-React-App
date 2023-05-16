@@ -13,7 +13,7 @@ export default function Note({ id, text,date, deleteHandler }) {
                 <Text>{text || ""}</Text>
                 <Text>Date: {date}</Text>
             </View>
-                <View style={[styles.noteFooter, { justifyContent: 'flex-end' }]}>
+                <View style={styles.noteFooter}>
                     <TouchableOpacity style={styles.button} onPress={handleDelete}>
                         <Text style={styles.buttonText}>DELETE</Text>
                     </TouchableOpacity>
@@ -31,12 +31,11 @@ const styles = {
         flexDirection: "column",
         justifyContent: "space-between",
         overflowWrap: "break-word",
-        shadowOffset: { width: -6, height: -4 },
-        shadowOpacity: 1,
-        shadowRadius: 2,
     },
     noteBody: {},
-    noteFooter: {},
+    noteFooter: {
+        justifyContent: 'flex-end',
+    },
     button: {
         alignItems: 'center',
         justifyContent: 'center',

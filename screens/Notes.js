@@ -67,7 +67,6 @@ const styles =  {
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-
     },
     background: {
         width: '100%',

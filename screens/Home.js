@@ -44,7 +44,7 @@ const styles = {
     },
     text: {
         color: 'black',
-        marginLeft: '35%',
+        marginLeft: '30%',
         marginTop: '10%',
     },
     button: {
