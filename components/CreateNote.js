@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TextInput, Button,TouchableOpacity } from "react-native";
 
-export default function CreateNote({ textHandler, saveHandler, text }) {
+export default function CreateNote({ textHandler, saveHandler, dateHandler, date, text }) {
 
 
     return (
@@ -12,7 +12,9 @@ export default function CreateNote({ textHandler, saveHandler, text }) {
                     keyboardType='numeric'
                     style={styles.date}
                     placeholder="Enter date"
+                    value={date}
                     maxLength={10}
+                    onChangeText={dateHandler}
                 />
             </View>
             <TextInput

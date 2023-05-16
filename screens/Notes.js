@@ -7,9 +7,14 @@ import { v4 as uuid } from "uuid";
 export default function Notes() {
     const [notes, setNotes] = useState([]);
     const [text, setText] = useState("");
+    const [date, setDate] = useState("");
 
     const textHandler = (text) => {
         setText(text);
+    };
+
+    const dateHandler = (date) => {
+        setDate(date);
     };
 
     const saveHandler = () => {
@@ -18,9 +23,11 @@ export default function Notes() {
             {
                 id: uuid(),
                 text: text,
+                date: date,
             },
         ]);
         setText("");
+        setDate("");
     };
 
     const deleteHandler = (id) => {
@@ -35,6 +42,7 @@ export default function Notes() {
                     key={note.id}
                     id={note.id}
                     text={note.text}
+                    date={note.date}
                     deleteHandler={deleteHandler}
                 />
             ))}
@@ -42,6 +50,8 @@ export default function Notes() {
                 textHandler={textHandler}
                 saveHandler={saveHandler}
                 inputText={text}
+                dateHandler={dateHandler}
+                date={date}
             />
         </View>
     );

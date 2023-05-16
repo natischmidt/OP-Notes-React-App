@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, Button, TouchableOpacity } from "react-native";
 
-export default function Note({ id, text, deleteHandler }) {
+export default function Note({ id, text,date, deleteHandler }) {
     return (
         <View style={styles.note}>
             <View style={styles.noteBody}>
                 <Text>{text || ""}</Text>
+                <Text>Date: {date}</Text>
             </View>
             <View style={[styles.noteFooter, { justifyContent: "flex-end" }]}>
                 <TouchableOpacity style={styles.Button}>
