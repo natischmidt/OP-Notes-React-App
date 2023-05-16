@@ -27,8 +27,8 @@ export default function CreateNote({ textHandler, saveHandler, dateHandler, date
             />
 
             <View style={styles.noteFooter}>
-                <TouchableOpacity style={styles.Button}>
-                    <Button title="SAVE" onPress={saveHandler} />
+                <TouchableOpacity style={styles.button} onPress={saveHandler}>
+                    <Text style={styles.buttonText}>SAVE</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -48,13 +48,20 @@ const styles = {
         shadowOpacity: 1,
         shadowRadius: 2,
     },
-    Button: {
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 12,
         paddingHorizontal: 32,
         borderRadius: 4,
         elevation: 3,
+        backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: 'white',
+    },
+    buttonText: {
+        color: 'black',
+        fontSize: 16,
     },
 
 };
