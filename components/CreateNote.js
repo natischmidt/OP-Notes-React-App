@@ -20,7 +20,7 @@ export default function CreateNote({ textHandler, saveHandler, text }) {
                 value={text}
                 placeholder="Type your note"
                 maxLength={100}
-                onChange={textHandler}
+                onChangeText={textHandler}
                 multiline={true}
             />
 
