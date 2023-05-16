@@ -1,10 +1,10 @@
 import React from 'react';
-import { ImageBackground,View, Text, Image } from "react-native";
-// import {View} from "react-native";
-// import Header from "./Header"
-// import {NavigationContainer} from "@react-navigation/native";
+import {ImageBackground, View, Text, Image, Button} from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function Home() {
+    const navigation = useNavigation();
 
     return (
 
@@ -18,6 +18,7 @@ export default function Home() {
                 source={require("../assets/Notes-icon.png")}
             />
             <Text style={styles.text}>Write everything down.</Text>
+                <Button title="Go to Notes" onPress={() => navigation.navigate('Notes')} />
             </ImageBackground>
         </View>
 
