@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, TouchableOpacity} from "react-native";
+import {View, Text, TouchableOpacity, StyleSheet} from "react-native";
 
 export default function Note({ id, text,date, deleteHandler }) {
 
@@ -22,7 +22,7 @@ export default function Note({ id, text,date, deleteHandler }) {
     );
 }
 
-const styles = {
+const styles = StyleSheet.create({
     note: {
         borderRadius: 15,
         borderWidth: 1.5,
@@ -51,4 +51,4 @@ const styles = {
         color: 'black',
         fontSize: 16,
     },
-};
+});

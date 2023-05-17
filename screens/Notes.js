@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import { ImageBackground,View,StyleSheet } from "react-native";
-import Note from "../components/Note";
-import CreateNote from "../components/CreateNote";
-import { v4 as uuid } from "uuid";
+import React, { useState } from 'react';
+import { ImageBackground, View, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import Note from '../components/Note';
+import CreateNote from '../components/CreateNote';
+import { v4 as uuid } from 'uuid';
 
 export default function Notes() {
     const [notes, setNotes] = useState([]);
-    const [text, setText] = useState("");
-    const [date, setDate] = useState("");
+    const [text, setText] = useState('');
+    const [date, setDate] = useState('');
 
     const textHandler = (text) => {
         setText(text);
@@ -26,8 +26,8 @@ export default function Notes() {
                 date: date,
             },
         ]);
-        setText("");
-        setDate("");
+        setText('');
+        setDate('');
     };
 
     const deleteHandler = (id) => {
@@ -35,53 +35,49 @@ export default function Notes() {
         setNotes(filteredNotes);
     };
 
+    const handleOverlayPress = () => {
+        Keyboard.dismiss();
+    };
+
     return (
-        <View>
-        <ImageBackground
-            source={require("../assets/background.jpg")}
-            resizeMode="cover"
-            style={styles.background}>
-            {notes.map((note) => (
-                <Note
-                    key={note.id}
-                    id={note.id}
-                    text={note.text}
-                    date={note.date}
-                    deleteHandler={deleteHandler}
-                />
-            ))}
-            <CreateNote
-                textHandler={textHandler}
-                saveHandler={saveHandler}
-                inputText={text}
-                dateHandler={dateHandler}
-                date={date}
-            />
-       </ImageBackground>
-        </View>
+        <TouchableWithoutFeedback onPress={handleOverlayPress}>
+            <View style={styles.container}>
+                <ImageBackground source={require('../assets/background.jpg')} resizeMode="cover" style={styles.background}>
+                    {notes.map((note) => (
+                        <Note key={note.id} id={note.id} text={note.text} date={note.date} deleteHandler={deleteHandler} />
+                    ))}
+                    <CreateNote
+                        textHandler={textHandler}
+                        saveHandler={saveHandler}
+                        inputText={text}
+                        dateHandler={dateHandler}
+                        date={date}
+                    />
+                </ImageBackground>
+            </View>
+        </TouchableWithoutFeedback>
     );
 }
 
-const styles =  {
+const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     background: {
         width: '100%',
-        height: '100%'
+        height: '100%',
     },
     logo: {
         width: 250,
         height: 250,
         marginLeft: '14%',
-        marginTop: '10%'
+        marginTop: '10%',
     },
     text: {
         color: 'black',
         marginLeft: '30%',
-        marginTop: '10%'
-
+        marginTop: '10%',
     },
-}
+});

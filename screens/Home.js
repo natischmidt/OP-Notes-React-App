@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { ImageBackground, View, Text, Image, TouchableOpacity, Modal, FlatList } from 'react-native';
+import {ImageBackground, View, Text, Image, TouchableOpacity, Modal, FlatList, StyleSheet} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import {AppList} from "../components/AppList";
-
-
+import { AppList } from '../components/AppList';
 
 export default function Home() {
     const navigation = useNavigation();
@@ -29,10 +27,7 @@ export default function Home() {
 
     return (
         <View style={styles.container}>
-            <ImageBackground
-                source={require('../assets/background.jpg')}
-                resizeMode="cover"
-                style={styles.background}>
+            <ImageBackground source={require('../assets/background.jpg')} resizeMode="cover" style={styles.background}>
                 <Image style={styles.logo} source={require('../assets/Notes-icon.png')} />
                 <Text style={styles.text}>Write everything down.</Text>
                 <TouchableOpacity style={styles.button} onPress={handlePress}>
@@ -42,24 +37,26 @@ export default function Home() {
                     <Text style={styles.otherAppsButtonText}>Other Apps</Text>
                 </TouchableOpacity>
                 <Modal visible={modalVisible} animationType="slide" onRequestClose={closeAppList}>
-                    <View style={styles.modalContainer}>
-                        <Text style={styles.modalTitle}>Available Apps</Text>
-                        <FlatList
-                            data={AppList}
-                            renderItem={renderAppItem}
-                            keyExtractor={(item) => item.id.toString()}
-                        />
-                        <TouchableOpacity style={styles.closeButton} onPress={closeAppList}>
-                            <Text style={styles.closeButtonText}>Close</Text>
-                        </TouchableOpacity>
-                    </View>
+                    <ImageBackground source={require('../assets/background.jpg')} resizeMode="cover" style={styles.background}>
+                        <View style={styles.modalContainer}>
+                            <Text style={styles.modalTitle}>Other Apps</Text>
+                            <FlatList
+                                data={AppList}
+                                renderItem={renderAppItem}
+                                keyExtractor={(item) => item.id.toString()}
+                            />
+                            <TouchableOpacity style={styles.closeButton} onPress={closeAppList}>
+                                <Text style={styles.closeButtonText}>Close</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </ImageBackground>
                 </Modal>
             </ImageBackground>
         </View>
     );
 }
 
-const styles = {
+const styles =StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -139,5 +136,4 @@ const styles = {
         color: 'black',
         fontSize: 16,
     },
-};
-
+});

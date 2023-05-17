@@ -1,8 +1,6 @@
 import React from "react";
 
 
-
-
 export const AppList = [
     { id: 1, name: 'OPDocuments' },
     { id: 2, name: 'OPSheets' },

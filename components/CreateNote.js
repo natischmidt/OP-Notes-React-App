@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TextInput, Text,TouchableOpacity } from "react-native";
+import {View, TextInput, Text, TouchableOpacity, StyleSheet} from "react-native";
 
 export default function CreateNote({ textHandler, saveHandler, dateHandler, date, text }) {
 
@@ -35,7 +35,7 @@ export default function CreateNote({ textHandler, saveHandler, dateHandler, date
     );
 }
 
-const styles = {
+const styles = StyleSheet.create({
     note: {
         borderRadius: 15,
         borderWidth: 1.5,
@@ -62,5 +62,5 @@ const styles = {
         fontSize: 16,
     },
 
-};
+});
 
