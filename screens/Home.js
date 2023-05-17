@@ -74,7 +74,7 @@ const styles =StyleSheet.create({
     },
     text: {
         color: 'black',
-        marginLeft: '30%',
+        marginLeft: '31%',
         marginTop: '10%',
     },
     button: {
