@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         overflowWrap: 'break-word',
-
     },
     button: {
         alignItems: 'center',

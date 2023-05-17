@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import {ImageBackground, View, Text, Image, TouchableOpacity, Modal, FlatList, StyleSheet} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AppList } from '../components/AppList';
