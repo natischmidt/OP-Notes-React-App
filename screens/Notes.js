@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { ImageBackground,View,StyleSheet } from "react-native";
 import Note from "../components/Note";
 import CreateNote from "../components/CreateNote";
