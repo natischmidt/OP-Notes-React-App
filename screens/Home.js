@@ -2,6 +2,8 @@ import  { useState } from 'react';
 import {ImageBackground, View, Text, Image, TouchableOpacity, Modal, FlatList, StyleSheet} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AppList } from '../components/AppList';
+import { AppListItem } from '../components/AppListItem';
+
 
 export default function Home() {
     const navigation = useNavigation();
@@ -20,9 +22,7 @@ export default function Home() {
     };
 
     const renderAppItem = ({ item }) => (
-        <TouchableOpacity style={styles.appItem}>
-            <Text style={styles.appName}>{item.name}</Text>
-        </TouchableOpacity>
+        <AppListItem name={item.name} />
     );
 
     return (
@@ -43,8 +43,7 @@ export default function Home() {
                             <FlatList
                                 data={AppList}
                                 renderItem={renderAppItem}
-                                keyExtractor={(item) => item.id.toString()}
-                            />
+                                keyExtractor={(item) => item.id.toString()}/>
                             <TouchableOpacity style={styles.closeButton} onPress={closeAppList}>
                                 <Text style={styles.closeButtonText}>Close</Text>
                             </TouchableOpacity>
@@ -118,14 +117,6 @@ const styles =StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 20,
-    },
-    appItem: {
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderBottomWidth: 1,
-    },
-    appName: {
-        fontSize: 16,
     },
     closeButton: {
         marginTop: 20,
