@@ -3,7 +3,7 @@ import {ImageBackground, View, Text, Image, TouchableOpacity, Modal, FlatList, S
 import { useNavigation } from '@react-navigation/native';
 import { AppList } from '../components/AppList';
 import { AppListItem } from '../components/AppListItem';
-
+import MyButton from "../components/MyButton";
 
 export default function Home() {
     const navigation = useNavigation();
@@ -30,12 +30,16 @@ export default function Home() {
             <ImageBackground source={require('../assets/background.jpg')} resizeMode="cover" style={styles.background}>
                 <Image style={styles.logo} source={require('../assets/Notes-icon.png')} />
                 <Text style={styles.text}>Write everything down.</Text>
-                <TouchableOpacity style={styles.button} onPress={handlePress}>
-                    <Text style={styles.buttonText}>Go to Notes</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.otherAppsButton} onPress={openAppList}>
-                    <Text style={styles.otherAppsButtonText}>Other Apps</Text>
-                </TouchableOpacity>
+                <MyButton
+                    style={styles.button}
+                    onPress={handlePress}
+                    text="Go to Notes"
+                />
+                <MyButton
+                    style={styles.otherAppsButton}
+                    onPress={openAppList}
+                    text="Other Apps"
+                />
                 <Modal visible={modalVisible} animationType="slide" onRequestClose={closeAppList}>
                     <ImageBackground source={require('../assets/background.jpg')} resizeMode="cover" style={styles.background}>
                         <View style={styles.modalContainer}>
@@ -44,9 +48,11 @@ export default function Home() {
                                 data={AppList}
                                 renderItem={renderAppItem}
                                 keyExtractor={(item) => item.id.toString()}/>
-                            <TouchableOpacity style={styles.closeButton} onPress={closeAppList}>
-                                <Text style={styles.closeButtonText}>Close</Text>
-                            </TouchableOpacity>
+                            <MyButton
+                                style={styles.closeButton}
+                                onPress={closeAppList}
+                                text="Close"
+                            />
                         </View>
                     </ImageBackground>
                 </Modal>
@@ -88,23 +94,6 @@ const styles =StyleSheet.create({
         borderColor: 'white',
     },
     buttonText: {
-        color: 'black',
-        fontSize: 16,
-    },
-    otherAppsButton: {
-        position: 'absolute',
-        top: 10,
-        left: 10,
-        padding: 10,
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        borderRadius: 4,
-        elevation: 3,
-        backgroundColor: 'transparent',
-        borderWidth: 1,
-        borderColor: 'white',
-    },
-    otherAppsButtonText: {
         color: 'black',
         fontSize: 16,
     },
