@@ -1,9 +1,11 @@
 import  { useState } from 'react';
-import {ImageBackground, View, Text, Image, TouchableOpacity, Modal, FlatList, StyleSheet} from 'react-native';
+import {ImageBackground, View, Text, Image, Modal, FlatList, StyleSheet} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AppList } from '../components/AppList';
 import { AppListItem } from '../components/AppListItem';
 import MyButton from "../components/MyButton";
+import 'react-native-get-random-values';
+
 
 export default function Home() {
     const navigation = useNavigation();
@@ -85,6 +87,19 @@ const styles =StyleSheet.create({
     button: {
         alignItems: 'center',
         justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 4,
+        elevation: 3,
+        backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: 'white',
+    },
+    otherAppsButton: {
+        position: 'absolute',
+        top: 10,
+        left: 10,
+        padding: 10,
         paddingVertical: 12,
         paddingHorizontal: 32,
         borderRadius: 4,

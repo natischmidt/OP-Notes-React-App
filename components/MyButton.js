@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const MyButton = ({ onPress, style, text }) => {
     return (
         <TouchableOpacity style={style} onPress={onPress}>
-            <Text style={styles.buttonText}>{text}</Text>
+            <Text>{text}</Text>
         </TouchableOpacity>
     );
 };
