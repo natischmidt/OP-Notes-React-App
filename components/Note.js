@@ -1,5 +1,6 @@
 import React from "react";
 import {View, Text, TouchableOpacity, StyleSheet} from "react-native";
+import MyButton from "./MyButton";
 
 export default function Note({ id, text,date, deleteHandler }) {
 
@@ -14,9 +15,11 @@ export default function Note({ id, text,date, deleteHandler }) {
                 <Text>Date: {date}</Text>
             </View>
                 <View style={styles.noteFooter}>
-                    <TouchableOpacity style={styles.button} onPress={handleDelete}>
-                        <Text style={styles.buttonText}>DELETE</Text>
-                    </TouchableOpacity>
+                    <MyButton
+                        style={styles.button}
+                        onPress={handleDelete}
+                        text="DELETE"
+                    />
             </View>
         </View>
     );
