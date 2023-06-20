@@ -53,6 +53,12 @@ export default function Notes() {
                         dateHandler={dateHandler}
                         date={date}
                     />
+                    <Note
+                    id={0}
+                    text={'Your notes will appaer here'}
+                    date={'00.00.00'}
+                    deleteHandler={deleteHandler}>
+                    </Note>
                 </ImageBackground>
             </View>
         </TouchableWithoutFeedback>
